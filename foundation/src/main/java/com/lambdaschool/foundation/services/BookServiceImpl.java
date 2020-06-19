@@ -36,61 +36,14 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Book save(Book book) {
-//        User newUser = new User();
-//
-//        if (user.getUserid() != 0)
-//        {
-//            User oldUser = userrepos.findById(user.getUserid())
-//                    .orElseThrow(() -> new ResourceNotFoundException("User id " + user.getUserid() + " not found!"));
-//
-//            // delete the roles for the old user we are replacing
-//            for (UserRoles ur : oldUser.getRoles())
-//            {
-//                deleteUserRole(ur.getUser()
-//                                .getUserid(),
-//                        ur.getRole()
-//                                .getRoleid());
-//            }
-//            newUser.setUserid(user.getUserid());
-//        }
-//
-//        newUser.setUsername(user.getUsername()
-//                .toLowerCase());
-//        newUser.setPasswordNoEncrypt(user.getPassword());
-//        newUser.setPrimaryemail(user.getPrimaryemail()
-//                .toLowerCase());
-//
-//        newUser.getRoles()
-//                .clear();
-//        if (user.getUserid() == 0)
-//        {
-//            for (UserRoles ur : user.getRoles())
-//            {
-//                Role newRole = roleService.findRoleById(ur.getRole()
-//                        .getRoleid());
-//
-//                newUser.addRole(newRole);
-//            }
-//        } else
-//        {
-//            // add the new roles for the user we are replacing
-//            for (UserRoles ur : user.getRoles())
-//            {
-//                addUserRole(newUser.getUserid(),
-//                        ur.getRole()
-//                                .getRoleid());
-//            }
-//        }
-//
-//        newUser.getUseremails()
-//                .clear();
-//        for (Useremail ue : user.getUseremails())
-//        {
-//            newUser.getUseremails()
-//                    .add(new Useremail(newUser,
-//                            ue.getUseremail()));
-//        }
 
+        List<Wrote> author = new ArrayList<>();
+        for (Wrote w : book.getWrotes())
+        {
+            author.add(new Wrote(w.getAuthor(), book));
+
+        }
+        book.setWrotes(author);
         return bookRepository.save(book);
     }
 }

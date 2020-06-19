@@ -21,7 +21,7 @@ public class Author extends Auditable{
 
     private String lastname;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "author", allowSetters = true)
     private List<Wrote> wrotes = new ArrayList<>();
 

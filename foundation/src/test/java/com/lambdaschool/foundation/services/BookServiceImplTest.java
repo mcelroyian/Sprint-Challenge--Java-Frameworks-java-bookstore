@@ -31,12 +31,17 @@ public class BookServiceImplTest {
 
     @Test
     public void findAll() {
-        assertEquals(0, bookService.findAll().size());
+
+//        System.out.println(bookService.findAll().get(0).getBookid());
+//        System.out.println(bookService.findAll().get(1).getBookid());
+//        System.out.println(bookService.findAll().get(2).getBookid());
+//        System.out.println(bookService.findAll().get(3).getBookid());
+        assertEquals(5, bookService.findAll().size());
     }
 
-    @Test(expected = ResourceNotFoundException.class)
+    @Test
     public void delete() {
-    bookService.delete(1);
+    bookService.delete(76);
     assertEquals(4, bookService.findAll().size());
     }
 

@@ -28,21 +28,6 @@ public class AuthorServiceImpl implements AuthorService {
     public Author save(Author author) {
         User newUser = new User();
 
-//        if (user.getUserid() != 0)
-//        {
-//            User oldUser = userrepos.findById(user.getUserid())
-//                    .orElseThrow(() -> new ResourceNotFoundException("User id " + user.getUserid() + " not found!"));
-//
-//            // delete the roles for the old user we are replacing
-//            for (UserRoles ur : oldUser.getRoles())
-//            {
-//                deleteUserRole(ur.getUser()
-//                                .getUserid(),
-//                        ur.getRole()
-//                                .getRoleid());
-//            }
-//            newUser.setUserid(user.getUserid());
-//        }
 //
 //        newUser.setUsername(user.getUsername()
 //                .toLowerCase());

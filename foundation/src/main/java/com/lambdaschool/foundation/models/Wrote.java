@@ -14,15 +14,13 @@ public class Wrote extends Auditable implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "authorid")
-    @JsonIgnoreProperties(value = "book",
-            allowSetters = true)
+    @JsonIgnoreProperties("wrotes")
     private Author author;
 
     @Id
     @ManyToOne
     @JoinColumn(name = "bookid")
-    @JsonIgnoreProperties(value = "author",
-            allowSetters = true)
+    @JsonIgnoreProperties("wrotes")
     private Book book;
 
     public Wrote() {

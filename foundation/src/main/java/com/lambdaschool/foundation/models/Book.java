@@ -25,7 +25,7 @@ public class Book extends Auditable{
 
     private int copy;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "book", allowSetters = true)
     private List<Wrote> wrotes = new ArrayList<>();
 
