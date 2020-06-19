@@ -54,13 +54,13 @@ public class ResourceServerConfig
                              "/createnewuser")
                 .permitAll()
                 .antMatchers(HttpMethod.POST,
-                             "/users/**")
+                             "/users/**", "/authors/**", "/books/**", "/data/**")
                 .hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE,
-                             "/users/**")
+                             "/users/**", "/authors/**", "/books/**", "/data/**")
                 .hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.PUT,
-                             "/users/**")
+                             "/users/**", "/authors/**", "/books/**", "/data/**")
                 .hasAnyRole("ADMIN")
                 .antMatchers("/users/**",
                              "/useremails/**",
